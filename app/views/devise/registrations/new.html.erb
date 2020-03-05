@@ -19,6 +19,7 @@
             <em>(<%= @minimum_password_length %> 文字以上)</em>
           <% end %><br />
           <%= f.password_field :password, autocomplete: 'off', class: 'form-control' %>
+          <!--紫部分はカラムをしめしている。その後ろのclassはcss用のクラスのこと。rubyタグの中なのでdivがない-->
         </div>
 
         <div class='form-group'>
@@ -29,6 +30,7 @@
         <div class='form-group'>
           <%= f.label :グループ名（半角英数） %><br />
           <%= f.text_field :group_key, class: 'form-control' %>
+          <!--上の紫部分はdiviseのgemで設定されていたけどgroup_keyはないのでモデルにインスタンスを記載しなくてはならない-->
         </div>
         
         <div class='actions'>
