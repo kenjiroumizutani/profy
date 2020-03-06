@@ -1,6 +1,6 @@
 class User < ApplicationRecord
     
-
+  has_one_attached :image 
   
    #accessor
   attr_accessor :group_key
