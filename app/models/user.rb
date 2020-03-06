@@ -42,6 +42,10 @@ class User < ApplicationRecord
   def name_kana
     "#{family_name_kana} #{first_name_kana}"
   end
+  
+  def full_profile?
+    image.attached?  && family_name? && first_name? && family_name_kana? && first_name_kana?
+  end
 
   private
   def has_group_key?
