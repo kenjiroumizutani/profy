@@ -1,7 +1,6 @@
 class User < ApplicationRecord
     
-  #association
-  belongs_to :group
+
   
    #accessor
   attr_accessor :group_key
@@ -11,6 +10,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable,
          authentication_keys: [:email, :group_key]
+
+  #association
+  belongs_to :group
 
  #validation
   before_validation :group_key_to_id, if: :has_group_key?
