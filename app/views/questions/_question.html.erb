@@ -13,7 +13,7 @@
     </div>
   </div>
    <div class="questioned">
-      <span>回答<%= question.answers.count %>件</span>
+      <%= link_to "回答#{question.answers.count}件", question_path(question) %>
     </div>
       <% unless question.answers.exists?(user_id: current_user.id) %>
 　　　　　　　<!--user_idにcurrent_user.idがあるか？-->
